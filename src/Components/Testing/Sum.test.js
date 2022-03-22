@@ -17,6 +17,13 @@ describe("Testing Sum function", () => {
 
   // value should not be equal therefore " not.toBe. " used
   it("3rd test case", () => {
-    expect(sum(4, 5)).not.toBe(9);
+    expect(sum(4, 5)).not.toBe(10);
+  });
+
+  it("4th test case", () => {
+    let data = sum(4, 5);
+    expect(data).toEqual({
+      name: "Anant",
+    });
   });
 });
