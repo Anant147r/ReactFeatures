@@ -1,8 +1,8 @@
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 import Article from "./Article";
 import Table from "./Table";
 
-describe("Article Page", () => {
+describe.skip("Article Page", () => {
   it("click count", () => {
     let wrapper = shallow(<Article />);
     expect(wrapper.find(".clicks-0").length).toEqual(1);
@@ -30,5 +30,17 @@ describe("Article Page", () => {
   it("snapshot 3", () => {
     let wrapper = shallow(<Table />);
     expect(wrapper).toMatchSnapshot();
+  });
+});
+
+describe("Mount vs Shallow", () => {
+  it("1st test case", () => {
+    let wrapper = shallow(<Article />);
+    console.log(wrapper.debug());
+  });
+
+  it.only("2nd test case", () => {
+    let wrapper = mount(<Article />);
+    console.log(wrapper.debug());
   });
 });
