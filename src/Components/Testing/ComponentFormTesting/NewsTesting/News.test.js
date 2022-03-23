@@ -23,5 +23,6 @@ describe("instance, state, props ---", () => {
     jest.spyOn(instance, "func");
     wrapper.find("button").simulate("click");
     expect(wrapper.instance().func).toHaveBeenCalledTimes(1);
+    expect(wrapper.instance().func).toHaveBeenCalledWith(80, 80); //it means whether the function is call with parameters with 80 ,80
   });
 });
