@@ -30,6 +30,6 @@ describe("Blog Page test", () => {
 
   it("class exists or not", () => {
     let wrapper = shallow(<Blog />);
-    expect(wrapper.is(".some-class")).toBe(true);
+    expect(wrapper.is(".mainCls")).toBe(true);
   });
 });
