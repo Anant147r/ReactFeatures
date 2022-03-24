@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-
+import "./News.css";
 class News extends Component {
   constructor(props) {
     super(props);
@@ -13,6 +13,7 @@ class News extends Component {
   }
   func = () => {
     console.log("Hello");
+    this.setState((st) => ({ newscount: st.newscount + 1 }));
   };
   // func=async(no1,no2)=>{
   //     let url=""
@@ -25,6 +26,12 @@ class News extends Component {
       <div>
         Hello
         <button onClick={() => this.func()}> Click</button>
+        <input
+          type="text"
+          id="firstName"
+          value="codeimprove"
+          name="firstname"
+        ></input>
       </div>
     );
   }
