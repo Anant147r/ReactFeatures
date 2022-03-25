@@ -12,7 +12,7 @@ class News extends Component {
     this.func(90, 80);
   }
   func = () => {
-    console.log("Hello");
+    // console.log("Hello");
     this.setState((st) => ({ newscount: st.newscount + 1 }));
   };
   // func=async(no1,no2)=>{
