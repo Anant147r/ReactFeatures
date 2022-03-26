@@ -19,7 +19,8 @@ class Form extends Component {
   };
   submitForm = (e) => {
     e.preventDefault();
-    return saveUser(this.state.name, this.state.email, this.state.color);
+    // return saveUser(this.state.name, this.state.email, this.state.color);
+    console.log("Form submitted");
   };
   render() {
     return (

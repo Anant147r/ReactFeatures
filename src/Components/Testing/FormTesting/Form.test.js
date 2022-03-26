@@ -16,7 +16,7 @@ describe("Form", () => {
     expect(colorSelect.props().value).toEqual("blue");
   });
 
-  it.only("Let me fill out a form and then reset it", () => {
+  it.only("Let me fill out a form", () => {
     const wrapper = shallow(<Form />);
 
     // 1ST EXAMPLE
@@ -55,12 +55,20 @@ describe("Form", () => {
     expect(nameInput.props().value).toEqual("Anant Rawat");
     expect(emailInput.props().value).toEqual("anant.rawat@gmail.com");
     expect(colorInput.props().value).toEqual("Yellow");
+  });
 
+  it.only("Let me click the reset button", () => {
+    let wrapper = shallow(<Form />);
     const resetButton = wrapper.find(`button[type="button"]`);
     resetButton.simulate("click");
 
     expect(wrapper.find("#name-input").props().value).toEqual("");
     expect(wrapper.find("#email-input").props().value).toEqual("");
     expect(wrapper.find("#color-input").props().value).toEqual("blue");
+  });
+
+  it("Submits the form", () => {
+    let wrapper = shallow(<Form />);
+    wrapper.find('button[type="submit"]').simulate("click");
   });
 });
