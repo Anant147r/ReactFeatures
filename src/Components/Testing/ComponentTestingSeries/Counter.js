@@ -7,15 +7,18 @@ class Counter extends React.Component {
     };
   }
 
-  increment = () => {
+  makeIncrementer = (amount) => {
     this.setState((prev) => {
-      return { counter: prev.counter + 1 };
+      return { counter: prev.counter + amount };
     });
   };
+
+  increment = () => {
+    this.makeIncrementer(1);
+  };
+
   decrement = () => {
-    this.setState((prev) => {
-      return { counter: prev.counter - 1 };
-    });
+    this.makeIncrementer(-1);
   };
   render() {
     return (
