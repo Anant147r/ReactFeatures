@@ -13,6 +13,9 @@ import {
   Page1,
   Page3,
   Page2,
+  UseHistory,
+  UseParams,
+  Location,
 } from "./Components/NewReactRouter/Pages/PageExport";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
@@ -32,6 +35,13 @@ function App() {
         <Route path="page" element={<Page1 />} />
         <Route path="page2" element={<Page2 />} />
         <Route path="page3" element={<Page3 />} />
+        <Route path="history" element={<UseHistory />} />
+        <Route
+          path="params/:fName/:lName"
+          defaultParams={{ fName: "Anant" }}
+          element={<UseParams />}
+        />
+        <Route path="location" element={<Location />} />
       </Routes>
     </BrowserRouter>
   );
