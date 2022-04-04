@@ -9,18 +9,31 @@ import Article from "./Components/Testing/ComponentFormTesting/SimulateAndDiveTe
 import Counter from "./Components/Testing/ComponentTestingSeries/Counter";
 import WithoutObject from "./Components/PropsTypes/Example1/WithoutObject";
 import WithObject from "./Components/PropsTypes/Example1/WithObject";
+import {
+  Page1,
+  Page3,
+  Page2,
+} from "./Components/NewReactRouter/Pages/PageExport";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-      {/* <Parent1 /> */}
-      {/* <UseMemo /> */}
-      {/* <UseCallback /> */}
-      {/* <UsingFetch /> */}
-      {/* <Article /> */}
-      {/* <Counter /> */}
-      {/* <WithoutObject /> */}
-      <WithObject />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        {/* <Parent1 /> */}
+        {/* <UseMemo /> */}
+        {/* <UseCallback /> */}
+        {/* <UsingFetch /> */}
+        {/* <Article /> */}
+        {/* <Counter /> */}
+        {/* <WithoutObject /> */}
+        {/* <WithObject /> */}
+      </div>
+      <Routes>
+        <Route path="page" element={<Page1 />} />
+        <Route path="page2" element={<Page2 />} />
+        <Route path="page3" element={<Page3 />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
